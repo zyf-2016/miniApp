@@ -1,0 +1,57 @@
+<!--pages/video/video.wxml-->
+<navBar title='易试互动' background='#bd232f' color='#fff' iconTheme='white' back="{{false}}" bindback="goback"></navBar>
+<view class="scan-area">
+	<view class="avatar">
+		<open-data type="userAvatarUrl"></open-data>
+	</view>
+	<text class="group-name">易络客党员</text>
+	<image class="icon-scan" src="../../images/scan.png" mode="aspectFill" bindtap="scan"></image>
+</view>
+<view class="page">
+	<view class="header">
+		<view class="nav-title">
+			<text class="{{currentIndex == 0 ? 'title-text active':'title-text'}}" data-index="0" bindtap="tabChange">宣誓留念</text>
+		</view>
+		<view class="nav-title">
+			<text class="{{currentIndex == 1 ? 'title-text active':'title-text'}}" data-index="1" bindtap="tabChange">党建留念</text>
+		</view>
+	</view>
+	<block wx:if="{{currentIndex == 0}}">
+		<scroll-view scroll-y style="height: {{height}}" wx:if="{{videoList.length}}">
+			<view class="list" wx:for="{{videoList}}" >
+				<view class="video-box" wx:if="{{item.filetype!=='image'}}">
+					<cover-image class="icon-play" src="../../images/icon-play.png" data-url="{{item.fileurl}}" bindtap="videoPlay" />
+					<video class="video" src="{{item.fileurl}}" object-fit="cover" show-fullscreen-btn="{{false}}" show-center-play-btn="{{false}}" show-play-btn="{{false}}"></video>
+				</view>
+				<view class="video-box" wx:else>
+					<image class="video" src="{{item.fileurl}}" mode="aspectFill" data-url="{{item.fileurl}}" bindtap="goToImage"></image>
+				</view>
+				<view class="info">
+					<view class="title">{{item.centent}}</view>
+					<view class="date">
+						<text class="text">{{item.week}}</text>
+						<text class="text">{{item.date}}</text>
+					</view>
+				</view>
+			</view>
+		</scroll-view>
+		<van-empty description="空空如也~" wx:if="{{!videoList.length}}" />
+	</block>
+	<block wx:else>
+		<scroll-view scroll-y style="height: {{height}}" wx:if="{{imageList.length}}">
+			<view class="list-image">
+				<view class="item-image" wx:for="{{imageList}}" data-url="{{item.fileurl}}" bindtap="goToImage">
+					<image class="thumb-image" src="{{item.fileurl}}" mode="aspectFill" />
+					<view class="info-image">
+						<view class="date-image">
+							<text class="text-image">{{item.week}}</text>
+							<text class="text-image">{{item.date}}</text>
+						</view>
+						<view class="title-image">{{item.title}}</view>
+					</view>
+				</view>
+			</view>
+		</scroll-view>
+		<van-empty description="空空如也~" wx:if="{{!imageList.length}}" />
+	</block>
+</view>

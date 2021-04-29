@@ -1,0 +1,163 @@
+/* pages/video/video.wxss */
+page {
+	background: #fff;
+}
+.page {
+	padding: 0 35rpx;
+}
+.scan-area {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	padding: 20rpx 35rpx;
+	border-bottom: 20rpx solid #f2f3f4;
+}
+.avatar {
+	width: 100rpx;
+	height: 100rpx;
+	border-radius: 50%;
+	overflow: hidden;
+}
+.group-name {
+	font-size: 32rpx;
+	font-weight: bold;
+	color: #333;
+	margin-left: 40rpx;
+	flex: 1;
+}
+.icon-scan {
+	width: 80rpx;
+	height: 80rpx;
+}
+.header {
+	height: 100rpx;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 36rpx;
+	font-weight: bold;
+	margin-bottom: 10rpx;
+}
+.nav-title {
+	line-height: 100rpx;
+	color: #b1b1b1;
+	flex: 1;
+	text-align: center;
+	position: relative;
+}
+.title-text {
+	display: inline-block;
+	height: 100rpx;
+	padding: 0 20rpx;
+}
+.title-text.active {
+	position: relative;
+	color: #000;
+}
+.title-text.active:after {
+	content: '';
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 8rpx;
+	background: #000;
+	bottom: 0rpx;
+	left: 0;
+}
+
+.list {
+	background: #fff;
+	margin-bottom: 35rpx;
+}
+.info {
+	padding: 0 30rpx;
+}
+.title {
+	font-size: 30rpx;
+	color: #666;
+	height: 60rpx;
+	line-height: 60rpx;
+}
+.date {
+	padding-bottom: 30rpx;
+}
+.text {
+	color: #b1b1b1;
+	font-size: 24rpx;
+}
+.text + .text {
+	margin-left: 30rpx;
+}
+.video {
+	width: 100%;
+}
+.video-box {
+	position: relative;
+}
+.icon-play {
+	width: 76rpx;
+	height: 76rpx;
+	position: absolute;
+	z-index: 9;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+
+.list-image:after {
+	content: "";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	height: 0;
+	font-size:0;
+}
+.item-image {
+	margin-bottom: 35rpx;
+	background: #fff;
+}
+.item-image:nth-of-type(2n-1) {
+	float: left;
+}
+.item-image:nth-of-type(2n) {
+	float: right;
+}
+.thumb-image {
+	width: 330rpx;
+	height: 186rpx;
+}
+.info-image {
+	padding: 24rpx 24rpx 34rpx;
+}
+.date-image {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.title-image {
+	margin-top: 12rpx;
+	font-size: 30rpx;
+	color: #666;
+}
+.text-image {
+	color: #b1b1b1;
+	font-size: 24rpx;
+}
+
+.video-layer {
+	background: #000;
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	padding: 0 20rpx;
+	top: 0;
+	left: 0;
+	box-sizing: border-box;
+	z-index: 10;
+}
+
+.empty {
+	width: 554rpx;
+	height: 182rpx;
+}
